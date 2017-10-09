@@ -20,11 +20,14 @@ var MovieItemComponent = (function () {
     }
     MovieItemComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.route.paramMap
+        this.subscription = this.route.paramMap
             .switchMap(function (params) {
             return _this.service.getItem(params.get('id'));
         })
             .subscribe(function (result) { return _this.item = result; }, function (error) { return console.log(error.statusText); });
+    };
+    MovieItemComponent.prototype.ngOnDestroy = function () {
+        this.subscription.unsubscribe();
     };
     MovieItemComponent.prototype.closeMovieItem = function () {
         this.router.navigate(['/movie-list']);

@@ -1,9 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {MovieService} from '../../core/services/movie.service';
-/*import {StarsComponent} from '../../shared/stars/stars.component';*/
 import {PosterMovie} from "../../shared/poster.models";
-import {Routes, RouterModule, Router} from '@angular/router';
-import {StarRatingComponent} from '../../shared/rating/rating.component'
+import {Router} from '@angular/router';
+import { Subscription }   from 'rxjs/Subscription';
 
 
 @Component({
@@ -21,6 +20,7 @@ export class MovieListComponent implements OnInit {
 
   ratingClicked: number;
   itemIdRatingClicked: number;
+  subscription: Subscription;
 
   ratingComponetClick(clickObj: any): void {
     let item = this.itemData.filter((item: any) => item.id === clickObj.itemId);
@@ -30,7 +30,6 @@ export class MovieListComponent implements OnInit {
       this.itemIdRatingClicked = clickObj.itemId;
     }
   }
-
 
   searchItemMovie(searchTitle: string) {
     this.service.getItems().subscribe(
@@ -76,8 +75,6 @@ export class MovieListComponent implements OnInit {
     )
   }
 
-  /*  private subscriptions: Subscription;*/
-
   like(item: PosterMovie) {
     item['likes']++;
     this.likeRender(item);
@@ -111,17 +108,15 @@ export class MovieListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.getItems().subscribe(
+    this.subscription = this.service.getItems().subscribe(
       result => this.itemData = result,
       error => console.log(error.statusText)
     );
   }
 
-  /*
-   ngOnDestroy(): void {
-   this.subscriptions.unsubscribe();
-   }*/
-
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 
   private likeRender(item: PosterMovie) {
     this.service.likeMovie(item).subscribe(

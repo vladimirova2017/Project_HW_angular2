@@ -14,19 +14,11 @@ var header_component_1 = require("./shared/header/header.component");
 var footer_component_1 = require("./shared/footer/footer.component");
 var sort_buttons_component_1 = require("./shared/sort-buttons/sort-buttons.component");
 var search_button_component_1 = require("./shared/search-button/search-button.component");
-/*import {StarsComponent}  from './shared/stars/stars.component';*/
 var search_filter_pipe_1 = require("./features/pipe/search-filter/search-filter.pipe");
-var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
-var inMemoryServer_1 = require("./inMemServer/inMemoryServer");
 var movie_list_component_1 = require("./features/movie-list/movie-list.component");
-var router_1 = require("@angular/router");
 var movie_item_component_1 = require("./features/movie-item/movie-item.component");
 var rating_component_1 = require("./shared/rating/rating.component");
-var appRoutes = [
-    { path: "movie-list", component: movie_list_component_1.MovieListComponent },
-    { path: 'movie-item/:id', component: movie_item_component_1.MovieItemComponent },
-    { path: "", redirectTo: "movie-list", pathMatch: "full" }
-];
+var app_routing_module_1 = require("./app-routing.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -40,7 +32,6 @@ AppModule = __decorate([
             footer_component_1.FooterComponent,
             sort_buttons_component_1.SortButtonsComponent,
             search_button_component_1.SearchButtonComponent,
-            /* StarsComponent,*/
             search_filter_pipe_1.SearchFilter,
             movie_list_component_1.MovieListComponent,
             movie_item_component_1.MovieItemComponent,
@@ -50,8 +41,7 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
-            angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(inMemoryServer_1.ItemData),
-            router_1.RouterModule.forRoot(appRoutes)
+            app_routing_module_1.AppRoutingModule
         ],
         providers: [],
         bootstrap: [app_component_1.AppComponent]

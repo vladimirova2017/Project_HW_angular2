@@ -1,8 +1,9 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, OnDestroy} from "@angular/core";
 import {MovieService} from "../../core/services/movie.service";
 import {Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {PosterMovie} from "../../shared/poster.models";
 import 'rxjs/add/operator/switchMap';
+import { Subscription }   from 'rxjs/Subscription';
 
 
 @Component({
@@ -13,8 +14,9 @@ import 'rxjs/add/operator/switchMap';
   providers: [MovieService]
 })
 
-export class MovieItemComponent implements OnInit{
+export class MovieItemComponent implements OnInit, OnDestroy{
   item : PosterMovie;
+  subscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +25,7 @@ export class MovieItemComponent implements OnInit{
   ) {}
 
   ngOnInit() {
-    this.route.paramMap
+    this.subscription = this.route.paramMap
       .switchMap((params: ParamMap) =>
         this.service.getItem(params.get('id')))
       .subscribe(
@@ -31,6 +33,11 @@ export class MovieItemComponent implements OnInit{
         error => console.log(error.statusText)
       );
   }
+
+   ngOnDestroy() {
+   this.subscription.unsubscribe();
+   }
+
 
   closeMovieItem() {
     this.router.navigate(['/movie-list']);

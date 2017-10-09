@@ -66,7 +66,6 @@ var MovieListComponent = (function () {
             _this.flagRating = !_this.flagRating;
         }, function (error) { return console.log(error.statusText); });
     };
-    /*  private subscriptions: Subscription;*/
     MovieListComponent.prototype.like = function (item) {
         item['likes']++;
         this.likeRender(item);
@@ -88,12 +87,11 @@ var MovieListComponent = (function () {
     };
     MovieListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.service.getItems().subscribe(function (result) { return _this.itemData = result; }, function (error) { return console.log(error.statusText); });
+        this.subscription = this.service.getItems().subscribe(function (result) { return _this.itemData = result; }, function (error) { return console.log(error.statusText); });
     };
-    /*
-     ngOnDestroy(): void {
-     this.subscriptions.unsubscribe();
-     }*/
+    MovieListComponent.prototype.ngOnDestroy = function () {
+        this.subscription.unsubscribe();
+    };
     MovieListComponent.prototype.likeRender = function (item) {
         this.service.likeMovie(item).subscribe(function (result) { return console.log(result.status); }, function (error) { return console.log(error); });
     };
