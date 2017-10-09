@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.base-content {
+  width: 100%;
+  margin: 5px auto;
+  padding: 20px 0 20px;
+  text-align: -webkit-center;
+  float: left;
+  border: 1px solid black;
+  font: 16px Arial, Helvetica;
+}
+
+.movie {
+  display: inline-table;
+  width: 200px;
+  margin: 20px;
+  border: 1px solid black;
+}
+
+.movie_sidebar {
+  width: 20%;
+  min-height: 100%;
+  float: left;
+  border-bottom: 1px solid black;
+}
+
+.movie_title {
+  font-weight: bolder;
+  padding-top: 20%;
+}
+
+.movie_sidebar-likes {
+  font-size: 12px;
+  border-bottom: 1px solid black;
+}
+
+.movie_quantity-likes {
+  padding: 10px 0;
+}
+
+.movie_description {
+  margin-left: 20%;
+  border-left: 1px solid black;
+  padding: 0 3px;
+  height: 330px;
+  position: relative;
+}
+
+.movie_poster {
+  width: 150px;
+  height: 215px;
+  overflow: hidden;
+}
+.movie_poster-img {
+  width: 150px;
+  height: 215px;
+  border: 1px solid black;
+}
+
+button {
+  width: 25px;
+  height: 25px;
+  border: 0;
+  outline: none;
+}
+
+.like {
+  background: url(app/shared/images/like.png) 3px no-repeat;
+}
+
+.dislike {
+  background: url(app/shared/images/dislike.png) 3px no-repeat;
+}
+
+

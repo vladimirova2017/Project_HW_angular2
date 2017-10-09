@@ -1,0 +1,7 @@
+div {
+  color: blue;
+  text-align: center;
+  border: 0.05em solid #333;
+  padding: 1em;
+  font: 26px 'Arial Black', Arial, Helvetica;
+}

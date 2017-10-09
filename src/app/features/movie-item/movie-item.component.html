@@ -1,0 +1,19 @@
+<div class='detail-content'>
+  <div class='item_content'>
+    <div class='item_sidebar'>
+      <div class='item_title-name'>{{ item?.title }}</div>
+      <star-rating [rating]='item?.stars'
+                   [itemId]='item?.id'>
+      </star-rating>
+      <div><span class='item_title'>Likes: </span>{{ item?.likes }}</div>
+      <div><span class='item_title'>Director: </span>{{ item?.director }}</div>
+      <div><span class='item_title'>Actors: </span>{{ item?.actors }}</div>
+      <div><span class='item_title'>Genres: </span>{{ item?.genres }}</div>
+      <div><span class='item_title'>Description: </span>{{ item?.description}}</div>
+    </div>
+    <div class='item_description'>
+      <button class='item_close' (click)='closeMovieItem()'></button>
+      <img class='item_poster' src='{{ item?.posterUrl }}' alt='poster'>
+    </div>
+  </div>
+</div>
