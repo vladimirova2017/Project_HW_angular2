@@ -10,22 +10,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/map");
+require("rxjs/add/operator/catch");
 var MovieService = (function () {
     function MovieService(http) {
         this.http = http;
     }
     MovieService.prototype.getItems = function () {
         return this.http.get('app/items')
-            .map(function (response) { return response.json().data; });
+            .map(function (response) { return response.json().data; })
+            .catch(function (err) {
+            console.log("Movie List proccesing Error");
+            return Observable_1.Observable.throw(err);
+        });
     };
     MovieService.prototype.likeMovie = function (item) {
         return this.http.post('app/items', item)
-            .map(function (response) { return response; });
+            .map(function (response) { return response; })
+            .catch(function (err) {
+            console.log("Like proccesing Error");
+            return Observable_1.Observable.throw(err);
+        });
     };
     MovieService.prototype.getItem = function (id) {
         return this.http.get("app/items/" + id)
-            .map(function (response) { return response.json().data; });
+            .map(function (response) { return response.json().data; })
+            .catch(function (err) {
+            console.log("Poster Error");
+            return Observable_1.Observable.throw(err);
+        });
     };
     return MovieService;
 }());

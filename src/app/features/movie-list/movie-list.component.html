@@ -5,8 +5,8 @@
 
     <section class="movie" *ngFor="let item of itemData">
       <div class="movie_sidebar">
-        <button class="like" (click)="like(item)"></button>
-        <button class="dislike" (click)="dislike(item)"></button>
+        <button class="like" (click)="like(item, true)"></button>
+        <button class="dislike" (click)="like(item, false)"></button>
         <div class="movie_sidebar-likes">likes</div>
         <div class="movie_quantity-likes">{{ item.likes }}</div>
       </div>
@@ -21,7 +21,6 @@
                    [itemId]='item.id'
                    (ratingClick)='ratingComponetClick($event)'>
       </star-rating>
-      <!-- <p *ngIf='ratingClicked'>The Item {{itemIdRatingClicked}} has been given {{ratingClicked}} stars</p>-->
     </section>
   </div>
 </div>

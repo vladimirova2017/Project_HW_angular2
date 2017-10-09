@@ -2,7 +2,7 @@ import {Component, OnInit, OnDestroy} from '@angular/core';
 import {MovieService} from '../../core/services/movie.service';
 import {PosterMovie} from "../../shared/poster.models";
 import {Router} from '@angular/router';
-import { Subscription }   from 'rxjs/Subscription';
+import {Subscription}   from 'rxjs/Subscription';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { Subscription }   from 'rxjs/Subscription';
   providers: [MovieService]
 })
 
-export class MovieListComponent implements OnInit {
+export class MovieListComponent implements OnInit, OnDestroy {
   itemData: PosterMovie[];
   flagLikes: boolean = false;
   flagRating: boolean = false;
@@ -24,7 +24,7 @@ export class MovieListComponent implements OnInit {
 
   ratingComponetClick(clickObj: any): void {
     let item = this.itemData.filter((item: any) => item.id === clickObj.itemId);
-    if(!!item && item.length === 1){
+    if (!!item && item.length === 1) {
       item[0].stars = clickObj.rating;
       this.ratingClicked = clickObj.rating;
       this.itemIdRatingClicked = clickObj.itemId;
@@ -35,8 +35,7 @@ export class MovieListComponent implements OnInit {
     this.service.getItems().subscribe(
       result => {
         this.itemData = result.filter((item: PosterMovie) => (item['title'].toLowerCase().indexOf(searchTitle) !== -1));
-      },
-      error => console.log(error.statusText));
+      });
   }
 
   sortItemMovie(sortBy: string) {
@@ -56,8 +55,7 @@ export class MovieListComponent implements OnInit {
           this.itemData = result.sort((a: any, b: any) => a['likes'] - b['likes']);
         }
         this.flagLikes = !this.flagLikes;
-      },
-      error => console.log(error.statusText)
+      }
     );
   }
 
@@ -70,21 +68,17 @@ export class MovieListComponent implements OnInit {
           this.itemData = result.sort((a: any, b: any) => a['stars'] - b['stars']);
         }
         this.flagRating = !this.flagRating
-      },
-      error => console.log(error.statusText)
+      }
     )
   }
 
-  like(item: PosterMovie) {
-    item['likes']++;
-    this.likeRender(item);
-  }
-
-  dislike(item: PosterMovie) {
-    if (item['likes']) {
+  like(item: PosterMovie, like: boolean) {
+    if (like) {
+      item['likes']++;
+    } else {
       item['likes']--;
-      this.likeRender(item);
     }
+    this.likeRender(item);
   }
 
   getItemData() {
@@ -102,15 +96,13 @@ export class MovieListComponent implements OnInit {
   constructor(private service: MovieService,
               private router: Router) {
     this.service.getItems().subscribe(
-      result => this.itemData = result,
-      error => console.log(error.statusText)
+      result => this.itemData = result
     );
   }
 
   ngOnInit() {
     this.subscription = this.service.getItems().subscribe(
-      result => this.itemData = result,
-      error => console.log(error.statusText)
+      result => this.itemData = result
     );
   }
 
@@ -120,7 +112,6 @@ export class MovieListComponent implements OnInit {
 
   private likeRender(item: PosterMovie) {
     this.service.likeMovie(item).subscribe(
-      result => console.log(result.status),
-      error => console.log(error))
+      result => result)
   };
 }

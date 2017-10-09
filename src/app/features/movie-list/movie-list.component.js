@@ -18,7 +18,7 @@ var MovieListComponent = (function () {
         this.router = router;
         this.flagLikes = false;
         this.flagRating = false;
-        this.service.getItems().subscribe(function (result) { return _this.itemData = result; }, function (error) { return console.log(error.statusText); });
+        this.service.getItems().subscribe(function (result) { return _this.itemData = result; });
     }
     MovieListComponent.prototype.ratingComponetClick = function (clickObj) {
         var item = this.itemData.filter(function (item) { return item.id === clickObj.itemId; });
@@ -32,7 +32,7 @@ var MovieListComponent = (function () {
         var _this = this;
         this.service.getItems().subscribe(function (result) {
             _this.itemData = result.filter(function (item) { return (item['title'].toLowerCase().indexOf(searchTitle) !== -1); });
-        }, function (error) { return console.log(error.statusText); });
+        });
     };
     MovieListComponent.prototype.sortItemMovie = function (sortBy) {
         if (sortBy == 'likes') {
@@ -52,7 +52,7 @@ var MovieListComponent = (function () {
                 _this.itemData = result.sort(function (a, b) { return a['likes'] - b['likes']; });
             }
             _this.flagLikes = !_this.flagLikes;
-        }, function (error) { return console.log(error.statusText); });
+        });
     };
     MovieListComponent.prototype.sortByRating = function () {
         var _this = this;
@@ -64,17 +64,16 @@ var MovieListComponent = (function () {
                 _this.itemData = result.sort(function (a, b) { return a['stars'] - b['stars']; });
             }
             _this.flagRating = !_this.flagRating;
-        }, function (error) { return console.log(error.statusText); });
+        });
     };
-    MovieListComponent.prototype.like = function (item) {
-        item['likes']++;
-        this.likeRender(item);
-    };
-    MovieListComponent.prototype.dislike = function (item) {
-        if (item['likes']) {
-            item['likes']--;
-            this.likeRender(item);
+    MovieListComponent.prototype.like = function (item, like) {
+        if (like) {
+            item['likes']++;
         }
+        else {
+            item['likes']--;
+        }
+        this.likeRender(item);
     };
     MovieListComponent.prototype.getItemData = function () {
         return this.itemData;
@@ -87,13 +86,13 @@ var MovieListComponent = (function () {
     };
     MovieListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.subscription = this.service.getItems().subscribe(function (result) { return _this.itemData = result; }, function (error) { return console.log(error.statusText); });
+        this.subscription = this.service.getItems().subscribe(function (result) { return _this.itemData = result; });
     };
     MovieListComponent.prototype.ngOnDestroy = function () {
         this.subscription.unsubscribe();
     };
     MovieListComponent.prototype.likeRender = function (item) {
-        this.service.likeMovie(item).subscribe(function (result) { return console.log(result.status); }, function (error) { return console.log(error); });
+        this.service.likeMovie(item).subscribe(function (result) { return result; });
     };
     ;
     return MovieListComponent;
