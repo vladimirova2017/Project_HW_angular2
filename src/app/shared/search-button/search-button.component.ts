@@ -1,5 +1,5 @@
-import {Component, Output, EventEmitter} from "@angular/core";
-import {NgForm} from "@angular/forms";
+import {Component, Output, EventEmitter} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   moduleId : module.id,

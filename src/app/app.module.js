@@ -7,11 +7,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
-var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var features_module_1 = require("./features/features.module");
 var app_routing_module_1 = require("./app-routing.module");
 var shared_module_1 = require("./shared/shared.module");
+var core_module_1 = require("./core/core.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,12 +24,11 @@ AppModule = __decorate([
         ],
         imports: [
             platform_browser_1.BrowserModule,
-            http_1.HttpModule,
             app_routing_module_1.AppRoutingModule,
             features_module_1.FeaturesModule,
-            shared_module_1.SharedModule
+            shared_module_1.SharedModule,
+            core_module_1.CoreModule
         ],
-        providers: [],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

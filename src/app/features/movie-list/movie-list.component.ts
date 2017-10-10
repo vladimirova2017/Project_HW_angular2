@@ -1,6 +1,6 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {MovieService} from '../../core/services/movie.service';
-import {PosterMovie} from "../../shared/poster.models";
+import {PosterMovie} from '../../shared/poster.models';
 import {Router} from '@angular/router';
 import {Subscription}   from 'rxjs/Subscription';
 

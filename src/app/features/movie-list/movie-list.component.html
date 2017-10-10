@@ -1,19 +1,19 @@
-<div class="clearfix">
-  <div class="base-content">
+<div class='clearfix'>
+  <div class='base-content'>
     <sort-buttons (eventSortLikes)='sortItemMovie($event)' (eventSortStars)='sortItemMovie($event)'></sort-buttons>
     <search-button (eventSearch)='searchItemMovie($event)'></search-button>
 
-    <section class="movie" *ngFor="let item of itemData">
-      <div class="movie_sidebar">
-        <button class="like" (click)="like(item, true)"></button>
-        <button class="dislike" (click)="like(item, false)"></button>
-        <div class="movie_sidebar-likes">likes</div>
-        <div class="movie_quantity-likes">{{ item.likes }}</div>
+    <section class='movie' *ngFor='let item of itemData'>
+      <div class='movie_sidebar'>
+        <button class='like' (click)='like(item, true)'></button>
+        <button class='dislike' (click)='like(item, false)'></button>
+        <div class='movie_sidebar-likes'>likes</div>
+        <div class='movie_quantity-likes'>{{ item.likes }}</div>
       </div>
-      <div class="movie_description" (click)="movieItem(item)">
-        <div class="movie_title">{{ item.title }}</div>
-        <div class="clearfix"></div>
-        <div class="movie_poster">
+      <div class='movie_description' (click)='movieItem(item)'>
+        <div class='movie_title'>{{ item.title }}</div>
+        <div class='clearfix'></div>
+        <div class='movie_poster'>
           <img class='movie_poster-img' src='{{ item.posterUrl }}' alt='poster'>
         </div>
       </div>

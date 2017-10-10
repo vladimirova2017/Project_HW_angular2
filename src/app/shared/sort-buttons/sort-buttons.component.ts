@@ -1,11 +1,11 @@
-import {Component, Output, EventEmitter} from "@angular/core";
+import {Component, Output, EventEmitter} from '@angular/core';
 import {MovieService} from '../../core/services/movie.service'
 
 @Component({
   moduleId : module.id,
-  selector: "sort-buttons",
-  templateUrl: "sort-buttons.component.html",
-  styleUrls: ["sort-buttons.component.css"],
+  selector: 'sort-buttons',
+  templateUrl: 'sort-buttons.component.html',
+  styleUrls: ['sort-buttons.component.css'],
   providers: [MovieService]
 })
 

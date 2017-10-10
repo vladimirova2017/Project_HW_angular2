@@ -37,9 +37,9 @@ __decorate([
 SortButtonsComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: "sort-buttons",
-        templateUrl: "sort-buttons.component.html",
-        styleUrls: ["sort-buttons.component.css"],
+        selector: 'sort-buttons',
+        templateUrl: 'sort-buttons.component.html',
+        styleUrls: ['sort-buttons.component.css'],
         providers: [movie_service_1.MovieService]
     })
 ], SortButtonsComponent);

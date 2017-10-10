@@ -31,7 +31,6 @@ SharedModule = __decorate([
             common_1.CommonModule,
             forms_1.FormsModule
         ],
-        providers: [],
         exports: [
             footer_component_1.FooterComponent,
             header_component_1.HeaderComponent,

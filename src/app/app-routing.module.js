@@ -11,10 +11,11 @@ var movie_item_component_1 = require("./features/movie-item/movie-item.component
 var movie_list_component_1 = require("./features/movie-list/movie-list.component");
 var inMemoryServer_1 = require("./inMemServer/inMemoryServer");
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
+var core_module_1 = require("./core/core.module");
 exports.appRoutes = [
-    { path: "movie-list", component: movie_list_component_1.MovieListComponent },
+    { path: 'movie-list', component: movie_list_component_1.MovieListComponent },
     { path: 'movie-item/:id', component: movie_item_component_1.MovieItemComponent },
-    { path: "", redirectTo: "movie-list", pathMatch: "full" }
+    { path: '', redirectTo: 'movie-list', pathMatch: 'full' }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -23,7 +24,11 @@ var AppRoutingModule = (function () {
 }());
 AppRoutingModule = __decorate([
     core_1.NgModule({
-        imports: [router_1.RouterModule.forRoot(exports.appRoutes), angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(inMemoryServer_1.ItemData)],
+        imports: [
+            core_module_1.CoreModule,
+            router_1.RouterModule.forRoot(exports.appRoutes),
+            angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(inMemoryServer_1.ItemData)
+        ],
         exports: [router_1.RouterModule]
     })
 ], AppRoutingModule);

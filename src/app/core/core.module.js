@@ -7,27 +7,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
-var movie_list_component_1 = require("./movie-list/movie-list.component");
-var movie_item_component_1 = require("./movie-item/movie-item.component");
-var shared_module_1 = require("../shared/shared.module");
-var forms_1 = require("@angular/forms");
-var FeaturesModule = (function () {
-    function FeaturesModule() {
+var http_1 = require("@angular/http");
+var movie_service_1 = require("./services/movie.service");
+var CoreModule = (function () {
+    function CoreModule() {
     }
-    return FeaturesModule;
+    return CoreModule;
 }());
-FeaturesModule = __decorate([
+CoreModule = __decorate([
     core_1.NgModule({
         imports: [
-            common_1.CommonModule,
-            forms_1.FormsModule,
-            shared_module_1.SharedModule
+            common_1.CommonModule
         ],
-        declarations: [
-            movie_list_component_1.MovieListComponent,
-            movie_item_component_1.MovieItemComponent
+        providers: [
+            movie_service_1.MovieService
+        ],
+        exports: [
+            http_1.HttpModule
         ]
     })
-], FeaturesModule);
-exports.FeaturesModule = FeaturesModule;
-//# sourceMappingURL=features.module.js.map
+], CoreModule);
+exports.CoreModule = CoreModule;
+//# sourceMappingURL=core.module.js.map
