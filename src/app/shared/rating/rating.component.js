@@ -9,40 +9,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var StarRatingComponent = (function () {
-    function StarRatingComponent() {
+var RatingComponent = (function () {
+    function RatingComponent() {
         this.ratingClick = new core_1.EventEmitter();
     }
-    StarRatingComponent.prototype.ngOnInit = function () {
+    RatingComponent.prototype.ngOnInit = function () {
         this.inpustName = this.itemId + '_rating';
     };
-    StarRatingComponent.prototype.onClick = function (rating) {
+    RatingComponent.prototype.onClick = function (rating) {
         this.rating = rating;
         this.ratingClick.emit({
             itemId: this.itemId,
             rating: rating
         });
     };
-    return StarRatingComponent;
+    return RatingComponent;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", Number)
-], StarRatingComponent.prototype, "rating", void 0);
+], RatingComponent.prototype, "rating", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", Number)
-], StarRatingComponent.prototype, "itemId", void 0);
+], RatingComponent.prototype, "itemId", void 0);
 __decorate([
     core_1.Output(),
     __metadata("design:type", core_1.EventEmitter)
-], StarRatingComponent.prototype, "ratingClick", void 0);
-StarRatingComponent = __decorate([
+], RatingComponent.prototype, "ratingClick", void 0);
+RatingComponent = __decorate([
     core_1.Component({
         selector: 'star-rating',
         templateUrl: 'app/shared/rating/rating.component.html',
         styleUrls: ['app/shared/rating/rating.component.css']
     })
-], StarRatingComponent);
-exports.StarRatingComponent = StarRatingComponent;
+], RatingComponent);
+exports.RatingComponent = RatingComponent;
 //# sourceMappingURL=rating.component.js.map

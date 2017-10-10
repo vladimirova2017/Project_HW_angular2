@@ -1,21 +1,21 @@
-import {Component, OnInit, OnDestroy} from "@angular/core";
-import {MovieService} from "../../core/services/movie.service";
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {MovieService} from '../../core/services/movie.service';
 import {Router, ActivatedRoute, ParamMap } from '@angular/router';
-import {PosterMovie} from "../../shared/poster.models";
-import 'rxjs/add/operator/switchMap';
+import {PosterMovie} from '../../shared/poster.models';
 import { Subscription }   from 'rxjs/Subscription';
 
+import 'rxjs/add/operator/switchMap';
 
 @Component({
-  moduleId : module.id,
-  selector : 'movie-item',
+  moduleId: module.id,
+  selector: 'movie-item',
   templateUrl: 'movie-item.component.html',
   styleUrls: ['movie-item.component.css'],
   providers: [MovieService]
 })
 
 export class MovieItemComponent implements OnInit, OnDestroy{
-  item : PosterMovie;
+  item: PosterMovie;
   subscription: Subscription;
 
   constructor(
@@ -38,10 +38,8 @@ export class MovieItemComponent implements OnInit, OnDestroy{
    this.subscription.unsubscribe();
    }
 
-
   closeMovieItem() {
     this.router.navigate(['/movie-list']);
   }
-
 }
 

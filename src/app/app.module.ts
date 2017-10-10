@@ -1,36 +1,24 @@
 import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpModule} from "@angular/http";
-import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 import {AppComponent}  from './app.component';
-import {HeaderComponent}  from './shared/header/header.component';
-import {FooterComponent}  from './shared/footer/footer.component';
-import {SortButtonsComponent}  from './shared/sort-buttons/sort-buttons.component';
-import {SearchButtonComponent}  from './shared/search-button/search-button.component';
-import {SearchFilter} from './features/pipe/search-filter/search-filter.pipe'
 
-import {MovieListComponent} from "./features/movie-list/movie-list.component";
-import {MovieItemComponent} from "./features/movie-item/movie-item.component";
-import {StarRatingComponent} from "./shared/rating/rating.component";
-import {AppRoutingModule} from "./app-routing.module";
+import {FeaturesModule} from './features/features.module';
+import {AppRoutingModule} from './app-routing.module';
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    SortButtonsComponent,
-    SearchButtonComponent,
-    SearchFilter,
-    MovieListComponent,
-    MovieItemComponent,
-    StarRatingComponent],
+    AppComponent
+  ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
-    AppRoutingModule],
+    AppRoutingModule,
+    FeaturesModule,
+    SharedModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

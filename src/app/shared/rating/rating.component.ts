@@ -5,7 +5,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
   templateUrl: 'app/shared/rating/rating.component.html',
   styleUrls: ['app/shared/rating/rating.component.css']
 })
-export class StarRatingComponent {
+export class RatingComponent {
   @Input() rating: number;
   @Input() itemId: number;
   @Output() ratingClick: EventEmitter<any> = new EventEmitter<any>();

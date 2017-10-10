@@ -1,26 +1,35 @@
-/*import {NgModule}      from '@angular/core';
-import {InMemoryWebApiModule} from "angular-in-memory-web-api";
-/!*import {BrowserModule} from '@angular/platform-browser';*!/
-
-import {FormsModule} from '@angular/forms';
-
-/!*import {AppComponent}  from './app.component';*!/
-import {HeaderComponent}  from './shared/header/header.component';
-import {FooterComponent}  from './shared/footer/footer.component';
-import {MainComponent}  from './main/main.component';
-import {SortButtonsComponent}  from './sort-buttons/sort-buttons.component';
-import {SearchButtonComponent}  from './search-button/search-button.component';
-import {StarsComponent}  from './shared/stars/stars.component';
-
-
-import {ItemData} from "../inMemServer/inMemoryServer";
-
-@NgModule({
-  imports: [InMemoryWebApiModule.forRoot(ItemData), FormsModule],
-  declarations: [ HeaderComponent, FooterComponent, MainComponent,
-    SortButtonsComponent, SearchButtonComponent, StarsComponent],
-  providers:[HeaderComponent, FooterComponent, MainComponent,
-    SortButtonsComponent, SearchButtonComponent, StarsComponent]
-})
-export class FeaturesModule {}*/
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var core_1 = require("@angular/core");
+var common_1 = require("@angular/common");
+var movie_list_component_1 = require("./movie-list/movie-list.component");
+var movie_item_component_1 = require("./movie-item/movie-item.component");
+var movie_service_1 = require("../core/services/movie.service");
+var shared_module_1 = require("../shared/shared.module");
+var forms_1 = require("@angular/forms");
+var FeaturesModule = (function () {
+    function FeaturesModule() {
+    }
+    return FeaturesModule;
+}());
+FeaturesModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            common_1.CommonModule,
+            forms_1.FormsModule,
+            shared_module_1.SharedModule
+        ],
+        declarations: [
+            movie_list_component_1.MovieListComponent,
+            movie_item_component_1.MovieItemComponent
+        ],
+        providers: [movie_service_1.MovieService]
+    })
+], FeaturesModule);
+exports.FeaturesModule = FeaturesModule;
 //# sourceMappingURL=features.module.js.map
