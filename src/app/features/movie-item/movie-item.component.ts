@@ -24,7 +24,7 @@ export class MovieItemComponent implements OnInit, OnDestroy{
     private service: MovieService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.subscription = this.route.paramMap
       .switchMap((params: ParamMap) =>
         this.service.getItem(params.get('id')))
@@ -34,7 +34,7 @@ export class MovieItemComponent implements OnInit, OnDestroy{
       );
   }
 
-   ngOnDestroy() {
+   ngOnDestroy(): void {
    this.subscription.unsubscribe();
    }
 

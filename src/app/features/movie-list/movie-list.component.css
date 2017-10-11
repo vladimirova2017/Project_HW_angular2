@@ -73,11 +73,11 @@ button {
 }
 
 .like {
-  background: url(app/shared/images/like.png) 3px no-repeat;
+  background: url(app/assept/images/like.png) 3px no-repeat;
 }
 
 .dislike {
-  background: url(app/shared/images/dislike.png) 3px no-repeat;
+  background: url(app/assept/images/dislike.png) 3px no-repeat;
 }
 
 

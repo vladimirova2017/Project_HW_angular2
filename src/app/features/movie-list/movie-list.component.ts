@@ -46,7 +46,7 @@ export class MovieListComponent implements OnInit, OnDestroy {
     }
   }
 
-  sortByLikes() {
+  sortByLikes(): void {
     this.service.getItems().subscribe(
       result => {
         if (!this.flagLikes) {
@@ -59,7 +59,7 @@ export class MovieListComponent implements OnInit, OnDestroy {
     );
   }
 
-  sortByRating() {
+  sortByRating(): void {
     this.service.getItems().subscribe(
       result => {
         if (!this.flagRating) {
@@ -81,7 +81,7 @@ export class MovieListComponent implements OnInit, OnDestroy {
     this.likeRender(item);
   }
 
-  getItemData() {
+  getItemData(): any {
     return this.itemData;
   }
 
@@ -100,17 +100,17 @@ export class MovieListComponent implements OnInit, OnDestroy {
     );
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.subscription = this.service.getItems().subscribe(
       result => this.itemData = result
     );
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  private likeRender(item: PosterMovie) {
+  private likeRender(item: PosterMovie): void {
     this.service.likeMovie(item).subscribe(
       result => result)
   };
