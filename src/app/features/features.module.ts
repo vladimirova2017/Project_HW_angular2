@@ -6,6 +6,7 @@ import {MovieListModule} from './movie-list/index';
 import {MovieItemModule} from './movie-item/index';
 
 import {SharedModule} from '../shared/shared.module';
+import {MovieEditModule} from "./movie-edit/index";
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {SharedModule} from '../shared/shared.module';
   ],
   exports:[
     MovieListModule,
-    MovieItemModule
+    MovieItemModule,
+    MovieEditModule
 ]
 })
 

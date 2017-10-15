@@ -5,5 +5,6 @@ export const MovieListRoutes: Routes = [
   {
     path: 'movie-list',
     component: MovieListComponent
-  }
+  },
+
 ];

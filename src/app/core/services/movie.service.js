@@ -25,7 +25,7 @@ var MovieService = (function () {
             return Observable_1.Observable.throw(err);
         });
     };
-    MovieService.prototype.likeMovie = function (item) {
+    MovieService.prototype.updateItemMovie = function (item) {
         return this.http.post('app/items', item)
             .map(function (response) { return response; })
             .catch(function (err) {

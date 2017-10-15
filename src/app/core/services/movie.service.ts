@@ -22,7 +22,7 @@ export class MovieService {
       })
   }
 
-  likeMovie(item: PosterMovie): Observable<Response> {
+  updateItemMovie(item: PosterMovie): Observable<Response> {
     return this.http.post('app/items', item)
       .map(response => response)
       .catch((err) => {

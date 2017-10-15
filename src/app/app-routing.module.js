@@ -11,7 +11,8 @@ var inMemoryServer_1 = require("./inMemServer/inMemoryServer");
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
 var movie_list_routes_1 = require("./features/movie-list/movie-list.routes");
 var movie_item_routes_1 = require("./features/movie-item/movie-item.routes");
-exports.appRoutes = movie_list_routes_1.MovieListRoutes.concat(movie_item_routes_1.MovieItemRoutes, [
+var movie_edit_routers_1 = require("./features/movie-edit/movie-edit.routers");
+exports.appRoutes = movie_list_routes_1.MovieListRoutes.concat(movie_item_routes_1.MovieItemRoutes, movie_edit_routers_1.MovieEditRoutes, [
     { path: '', redirectTo: 'movie-list', pathMatch: 'full' },
 ]);
 var AppRoutingModule = (function () {

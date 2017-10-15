@@ -26,6 +26,7 @@ var MovieListComponent = (function () {
             item[0].stars = clickObj.rating;
             this.ratingClicked = clickObj.rating;
             this.itemIdRatingClicked = clickObj.itemId;
+            this.service.updateItemMovie(item[0]).subscribe(function (result) { return result; });
         }
     };
     MovieListComponent.prototype.searchItemMovie = function (searchTitle) {
@@ -84,6 +85,9 @@ var MovieListComponent = (function () {
     MovieListComponent.prototype.movieItem = function (item) {
         this.router.navigate(['/movie-item', item.id]);
     };
+    MovieListComponent.prototype.movieEdit = function () {
+        this.router.navigate(['/movie-item-edit']);
+    };
     MovieListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.subscription = this.service.getItems().subscribe(function (result) { return _this.itemData = result; });
@@ -92,7 +96,7 @@ var MovieListComponent = (function () {
         this.subscription.unsubscribe();
     };
     MovieListComponent.prototype.likeRender = function (item) {
-        this.service.likeMovie(item).subscribe(function (result) { return result; });
+        this.service.updateItemMovie(item).subscribe(function (result) { return result; });
     };
     ;
     return MovieListComponent;

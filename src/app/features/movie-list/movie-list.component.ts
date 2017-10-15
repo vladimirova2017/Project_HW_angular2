@@ -23,11 +23,13 @@ export class MovieListComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   ratingComponetClick(clickObj: any): void {
-    let item = this.itemData.filter((item: any) => item.id === clickObj.itemId);
+    let item = this.itemData.filter((item: PosterMovie) => item.id === clickObj.itemId);
     if (!!item && item.length === 1) {
       item[0].stars = clickObj.rating;
       this.ratingClicked = clickObj.rating;
       this.itemIdRatingClicked = clickObj.itemId;
+      this.service.updateItemMovie(item[0]).subscribe(
+        result => result)
     }
   }
 
@@ -92,7 +94,9 @@ export class MovieListComponent implements OnInit, OnDestroy {
   movieItem(item: PosterMovie) {
     this.router.navigate(['/movie-item', item.id]);
   }
-
+  movieEdit(){
+    this.router.navigate(['/movie-item-edit']);
+  }
   constructor(private service: MovieService,
               private router: Router) {
     this.service.getItems().subscribe(
@@ -111,7 +115,7 @@ export class MovieListComponent implements OnInit, OnDestroy {
   }
 
   private likeRender(item: PosterMovie): void {
-    this.service.likeMovie(item).subscribe(
+    this.service.updateItemMovie(item).subscribe(
       result => result)
   };
 }

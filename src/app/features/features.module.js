@@ -11,6 +11,7 @@ var forms_1 = require("@angular/forms");
 var index_1 = require("./movie-list/index");
 var index_2 = require("./movie-item/index");
 var shared_module_1 = require("../shared/shared.module");
+var index_3 = require("./movie-edit/index");
 var FeaturesModule = (function () {
     function FeaturesModule() {
     }
@@ -25,7 +26,8 @@ FeaturesModule = __decorate([
         ],
         exports: [
             index_1.MovieListModule,
-            index_2.MovieItemModule
+            index_2.MovieItemModule,
+            index_3.MovieEditModule
         ]
     })
 ], FeaturesModule);
