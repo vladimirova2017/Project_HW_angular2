@@ -5,7 +5,7 @@ import {NgForm} from '@angular/forms';
   moduleId : module.id,
   selector: 'search-button',
   templateUrl: 'search-button.component.html',
-  styleUrls: ['search-button.component.css']
+  styleUrls: ['search-button.component.scss']
 })
 
 export class SearchButtonComponent {

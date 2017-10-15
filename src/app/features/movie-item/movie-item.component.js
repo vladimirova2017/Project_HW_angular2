@@ -39,7 +39,7 @@ MovieItemComponent = __decorate([
         moduleId: module.id,
         selector: 'movie-item',
         templateUrl: 'movie-item.component.html',
-        styleUrls: ['movie-item.component.css'],
+        styleUrls: ['movie-item.component.scss'],
         providers: [movie_service_1.MovieService]
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute,

@@ -10,7 +10,7 @@ import 'rxjs/add/operator/switchMap';
   moduleId: module.id,
   selector: 'movie-item',
   templateUrl: 'movie-item.component.html',
-  styleUrls: ['movie-item.component.css'],
+  styleUrls: ['movie-item.component.scss'],
   providers: [MovieService]
 })
 

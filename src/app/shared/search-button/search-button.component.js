@@ -28,7 +28,7 @@ SearchButtonComponent = __decorate([
         moduleId: module.id,
         selector: 'search-button',
         templateUrl: 'search-button.component.html',
-        styleUrls: ['search-button.component.css']
+        styleUrls: ['search-button.component.scss']
     })
 ], SearchButtonComponent);
 exports.SearchButtonComponent = SearchButtonComponent;

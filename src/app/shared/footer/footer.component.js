@@ -17,7 +17,7 @@ FooterComponent = __decorate([
         moduleId: module.id,
         selector: 'footer',
         templateUrl: 'footer.component.html',
-        styleUrls: ['footer.component.css']
+        styleUrls: ['footer.component.scss']
     })
 ], FooterComponent);
 exports.FooterComponent = FooterComponent;

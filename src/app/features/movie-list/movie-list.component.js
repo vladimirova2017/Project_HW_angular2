@@ -102,7 +102,7 @@ MovieListComponent = __decorate([
         moduleId: module.id,
         selector: 'movie-list',
         templateUrl: 'movie-list.component.html',
-        styleUrls: ['movie-list.component.css'],
+        styleUrls: ['movie-list.component.scss'],
         providers: [movie_service_1.MovieService]
     }),
     __metadata("design:paramtypes", [movie_service_1.MovieService,

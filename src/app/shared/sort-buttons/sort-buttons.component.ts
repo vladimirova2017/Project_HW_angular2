@@ -5,7 +5,7 @@ import {MovieService} from '../../core/services/movie.service'
   moduleId : module.id,
   selector: 'sort-buttons',
   templateUrl: 'sort-buttons.component.html',
-  styleUrls: ['sort-buttons.component.css'],
+  styleUrls: ['sort-buttons.component.scss'],
   providers: [MovieService]
 })
 
