@@ -1,37 +1,42 @@
+<div class="base">
 <button class='movie_item_close' (click)='closeMovieItem()'></button>
 
-<form action="" class="movie-edit_block">
+<form action="" class="movie-edit_block" #block_editMovie="ngForm" (ngSubmit)="onEditMovie(block_editMovie.value)">
   <table>
     <tr>
       <th class="me-header" colspan="2">Adding movie</th>
       <td></td>
     <tr>
       <td><label  for="me-title">Title</label></td>
-      <td><input type="text" class="me-field" value="" id="me-title"></td>
+      <td><input type="text" class="me-field" value="" id="me-title" name="title" ngModel required></td>
     </tr>
     <tr>
       <td><label for="me-poster_url">PosterUrl</label></td>
-      <td><input type="text" class="me-field" value="" id="me-poster_url"></td>
+      <td><input type="text" class="me-field" value="" id="me-poster_url" name="posterUrl" ngModel required></td>
     </tr>
     <tr>
       <td><label for="me-genres">Genres</label></td>
-      <td><input type="text" class="me-field" value="" id="me-genres"></td>
+      <td><input type="text" class="me-field" value="" id="me-genres" name="genres" ngModel required></td>
     </tr>
     <tr>
       <td><label for="me-actors">Actors</label></td>
-      <td><input type="text" class="me-field" value="" id="me-actors"></td>
+      <td><input type="text" class="me-field" value="" id="me-actors" name="actors" ngModel required></td>
     </tr>
     <tr>
       <td><label for="me-director">Director</label></td>
-      <td><input type="text" class="me-field" value="" id="me-director"></td>
+      <td><input type="text" class="me-field" value="" id="me-director" name="director" ngModel required></td>
     </tr>
     <tr>
       <td><label for="me-description">Description</label></td>
-      <td><textarea type="text" class="me-field-description" value="" id="me-description"></textarea></td>
+      <td><textarea type="text" class="me-field-description" value="" id="me-description" name="description" ngModel required>
+      </textarea></td>
     </tr>
     <tr>
       <td colspan="2"></td>
-      <td><input type="submit" class="me-submit" value="Submit"></td>
+      <td><input type="submit" class="me-submit" value="Submit" [disabled]="!block_editMovie.form.valid"></td>
     </tr>
   </table>
 </form>
+<div class="example">* Ссылка для примера при заполнении формы: http://www.filmshouse.ru/system/uploads/film/cover/1747/958722.jpg</div>
+</div>
+<!--http://www.filmshouse.ru/system/uploads/film/cover/1747/958722.jpg-->

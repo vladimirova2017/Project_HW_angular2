@@ -8,9 +8,5 @@ import {Component} from "@angular/core";
 })
 
 export class EditButtonComponent {
-  nameNew: string = 'Add New Film';
-
-  edit(){
-
-  }
+  nameNew: string = 'add new movie';
 }

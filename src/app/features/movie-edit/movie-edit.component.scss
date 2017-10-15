@@ -1,17 +1,22 @@
 *{
   box-sizing: border-box;
 }
+.base{
+  background-color: #F3E2A9;
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+}
 .movie-edit_block{
   display: flex;
   flex-direction: column;
 }
-
 .me-header{
   width: 30em;
   overflow: auto;
   padding: 0.5em;
   table-layout: fixed;
   border : 0.01em solid black;
+  background-color: #BEF781;
   color: #00f;
 }
 .me-field{
@@ -39,6 +44,11 @@
   width: 15em;
   padding: 0.5em;
   table-layout: fixed;
+}
+.example{
+  padding: 0.5em;
+  font-weight: bold;
+  background-color: #BEF781;
 }
 label{
   color: #00f;
