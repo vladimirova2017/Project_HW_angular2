@@ -1,14 +1,14 @@
 *{
   box-sizing: border-box;
 }
-.base{
-  background-color: #F3E2A9;
-  border-left: 1px solid #333;
-  border-right: 1px solid #333;
-}
 .movie-edit_block{
   display: flex;
   flex-direction: column;
+}
+.me-base{
+  background-color: #F3E2A9;
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
 }
 .me-header{
   width: 30em;

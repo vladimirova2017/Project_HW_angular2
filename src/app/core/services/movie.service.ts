@@ -26,7 +26,7 @@ export class MovieService {
     return this.http.post('app/items', item)
       .map(response => response)
       .catch((err) => {
-        console.log("Like proccesing Error");
+        console.log("Like processing Error");
         return Observable.throw(err)
       })
   }

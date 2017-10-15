@@ -29,7 +29,7 @@ var MovieService = (function () {
         return this.http.post('app/items', item)
             .map(function (response) { return response; })
             .catch(function (err) {
-            console.log("Like proccesing Error");
+            console.log("Like processing Error");
             return Observable_1.Observable.throw(err);
         });
     };
