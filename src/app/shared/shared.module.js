@@ -13,6 +13,7 @@ var index_3 = require("./rating/index");
 var index_4 = require("./search-button/index");
 var index_5 = require("./sort-buttons/index");
 var forms_1 = require("@angular/forms");
+var edit_button_module_1 = require("./edit-button/edit-button.module");
 var SharedModule = (function () {
     function SharedModule() {
     }
@@ -30,6 +31,7 @@ SharedModule = __decorate([
             index_3.RatingModule,
             index_4.SearchButtonModule,
             index_5.SortButtonsModule,
+            edit_button_module_1.EditButtonModule
         ]
     })
 ], SharedModule);

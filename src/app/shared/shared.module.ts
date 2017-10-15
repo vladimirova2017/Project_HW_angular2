@@ -6,6 +6,7 @@ import {RatingModule} from "./rating/index";
 import {SearchButtonModule} from "./search-button/index";
 import {SortButtonsModule} from "./sort-buttons/index";
 import {FormsModule} from "@angular/forms";
+import {EditButtonModule} from "./edit-button/edit-button.module";
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import {FormsModule} from "@angular/forms";
     RatingModule,
     SearchButtonModule,
     SortButtonsModule,
+    EditButtonModule
   ]
 })
 

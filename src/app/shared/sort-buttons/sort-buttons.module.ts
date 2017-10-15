@@ -10,4 +10,5 @@ import {CommonModule} from "@angular/common";
     CommonModule,
     FormsModule]*/
 })
-export class SortButtonsModule { }
+export class SortButtonsModule {
+}

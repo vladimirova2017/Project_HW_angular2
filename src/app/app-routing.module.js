@@ -7,15 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var movie_item_component_1 = require("./features/movie-item/movie-item.component");
-var movie_list_component_1 = require("./features/movie-list/movie-list.component");
 var inMemoryServer_1 = require("./inMemServer/inMemoryServer");
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
-exports.appRoutes = [
-    { path: 'movie-list', component: movie_list_component_1.MovieListComponent },
-    { path: 'movie-item/:id', component: movie_item_component_1.MovieItemComponent },
-    { path: '', redirectTo: 'movie-list', pathMatch: 'full' }
-];
+var movie_list_routes_1 = require("./features/movie-list/movie-list.routes");
+var movie_item_routes_1 = require("./features/movie-item/movie-item.routes");
+exports.appRoutes = movie_list_routes_1.MovieListRoutes.concat(movie_item_routes_1.MovieItemRoutes, [
+    { path: '', redirectTo: 'movie-list', pathMatch: 'full' },
+]);
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
     }

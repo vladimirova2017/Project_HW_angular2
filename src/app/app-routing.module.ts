@@ -1,16 +1,14 @@
 import {NgModule}from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {MovieItemComponent} from './features/movie-item/movie-item.component';
-import {MovieListComponent} from './features/movie-list/movie-list.component';
 import {ItemData} from './inMemServer/inMemoryServer';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {CoreModule} from './core/core.module';
-import {HttpModule} from "@angular/http";
+import { MovieListRoutes } from "./features/movie-list/movie-list.routes";
+import { MovieItemRoutes } from "./features/movie-item/movie-item.routes";
 
 export const appRoutes: Routes = [
-  {path: 'movie-list', component: MovieListComponent},
-  {path: 'movie-item/:id', component: MovieItemComponent},
-  {path:'', redirectTo: 'movie-list', pathMatch: 'full'}
+  ...MovieListRoutes,
+  ...MovieItemRoutes,
+  {path: '', redirectTo: 'movie-list', pathMatch: 'full'},
 ];
 
 @NgModule({
