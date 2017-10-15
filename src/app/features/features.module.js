@@ -7,10 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
-var movie_list_component_1 = require("./movie-list/movie-list.component");
-var movie_item_component_1 = require("./movie-item/movie-item.component");
-var shared_module_1 = require("../shared/shared.module");
 var forms_1 = require("@angular/forms");
+var index_1 = require("./movie-list/index");
+var index_2 = require("./movie-item/index");
+var shared_module_1 = require("../shared/shared.module");
 var FeaturesModule = (function () {
     function FeaturesModule() {
     }
@@ -23,9 +23,9 @@ FeaturesModule = __decorate([
             forms_1.FormsModule,
             shared_module_1.SharedModule
         ],
-        declarations: [
-            movie_list_component_1.MovieListComponent,
-            movie_item_component_1.MovieItemComponent
+        exports: [
+            index_1.MovieListModule,
+            index_2.MovieItemModule
         ]
     })
 ], FeaturesModule);

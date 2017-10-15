@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
-import {MovieListComponent} from './movie-list/movie-list.component';
-import {MovieItemComponent} from './movie-item/movie-item.component';
-import {MovieService} from '../core/services/movie.service';
+import {MovieListModule} from './movie-list/index';
+import {MovieItemModule} from './movie-item/index';
 
 import {SharedModule} from '../shared/shared.module';
-import {FormsModule} from '@angular/forms';
+
 
 @NgModule({
   imports: [
@@ -14,10 +14,10 @@ import {FormsModule} from '@angular/forms';
     FormsModule,
     SharedModule
   ],
-  declarations: [
-    MovieListComponent,
-    MovieItemComponent
-  ]
+  exports:[
+    MovieListModule,
+    MovieItemModule
+]
 })
 
 export class FeaturesModule {

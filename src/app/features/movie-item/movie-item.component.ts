@@ -38,7 +38,7 @@ export class MovieItemComponent implements OnInit, OnDestroy{
    this.subscription.unsubscribe();
    }
 
-  closeMovieItem() {
+  closeMovieItem(): void {
     this.router.navigate(['/movie-list']);
   }
 }

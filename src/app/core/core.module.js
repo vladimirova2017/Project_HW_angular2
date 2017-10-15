@@ -6,8 +6,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var common_1 = require("@angular/common");
-var http_1 = require("@angular/http");
 var movie_service_1 = require("./services/movie.service");
 var CoreModule = (function () {
     function CoreModule() {
@@ -16,14 +14,8 @@ var CoreModule = (function () {
 }());
 CoreModule = __decorate([
     core_1.NgModule({
-        imports: [
-            common_1.CommonModule
-        ],
         providers: [
             movie_service_1.MovieService
-        ],
-        exports: [
-            http_1.HttpModule
         ]
     })
 ], CoreModule);

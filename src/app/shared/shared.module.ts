@@ -1,31 +1,23 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FooterComponent} from './footer/footer.component';
-import {HeaderComponent} from './header/header.component';
-import {SearchButtonComponent} from './search-button/search-button.component';
-import {SortButtonsComponent} from './sort-buttons/sort-buttons.component';
-import {FormsModule} from '@angular/forms';
-import {RatingComponent} from './rating/rating.component';
-
+import {FooterModule} from "./footer/index";
+import {HeaderModule} from "./header/index";
+import {RatingModule} from "./rating/index";
+import {SearchButtonModule} from "./search-button/index";
+import {SortButtonsModule} from "./sort-buttons/index";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
-  declarations: [
-    FooterComponent,
-    HeaderComponent,
-    RatingComponent,
-    SearchButtonComponent,
-    SortButtonsComponent
-  ],
   imports: [
     CommonModule,
     FormsModule
   ],
   exports: [
-    FooterComponent,
-    HeaderComponent,
-    RatingComponent,
-    SearchButtonComponent,
-    SortButtonsComponent
+    FooterModule,
+    HeaderModule,
+    RatingModule,
+    SearchButtonModule,
+    SortButtonsModule,
   ]
 })
 

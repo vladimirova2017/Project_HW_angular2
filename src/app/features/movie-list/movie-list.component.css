@@ -8,7 +8,7 @@
   clear: both;
 }
 
-.base-content {
+.movie_list_base-content {
   width: 100%;
   margin: 5px auto;
   padding: 20px 0 20px;
@@ -18,35 +18,35 @@
   font: 16px Arial, Helvetica;
 }
 
-.movie {
+.movie_list {
   display: inline-table;
   width: 200px;
   margin: 20px;
   border: 1px solid black;
 }
 
-.movie_sidebar {
+.movie_list_sidebar {
   width: 20%;
   min-height: 100%;
   float: left;
   border-bottom: 1px solid black;
 }
 
-.movie_title {
+.movie_list_title {
   font-weight: bolder;
   padding-top: 20%;
 }
 
-.movie_sidebar-likes {
+.movie_list_sidebar-likes {
   font-size: 12px;
   border-bottom: 1px solid black;
 }
 
-.movie_quantity-likes {
+.movie_list_quantity-likes {
   padding: 10px 0;
 }
 
-.movie_description {
+.movie_list_description {
   margin-left: 20%;
   border-left: 1px solid black;
   padding: 0 3px;
@@ -54,12 +54,12 @@
   position: relative;
 }
 
-.movie_poster {
+.movie_list_poster {
   width: 150px;
   height: 215px;
   overflow: hidden;
 }
-.movie_poster-img {
+.movie_list_poster-img {
   width: 150px;
   height: 215px;
   border: 1px solid black;
@@ -73,11 +73,11 @@ button {
 }
 
 .like {
-  background: url(app/assept/images/like.png) 3px no-repeat;
+  background: url(app/assets/images/like.png) 3px no-repeat;
 }
 
 .dislike {
-  background: url(app/assept/images/dislike.png) 3px no-repeat;
+  background: url(app/assets/images/dislike.png) 3px no-repeat;
 }
 
 

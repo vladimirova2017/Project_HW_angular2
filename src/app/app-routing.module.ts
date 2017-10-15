@@ -5,6 +5,7 @@ import {MovieListComponent} from './features/movie-list/movie-list.component';
 import {ItemData} from './inMemServer/inMemoryServer';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {CoreModule} from './core/core.module';
+import {HttpModule} from "@angular/http";
 
 export const appRoutes: Routes = [
   {path: 'movie-list', component: MovieListComponent},
@@ -14,7 +15,6 @@ export const appRoutes: Routes = [
 
 @NgModule({
   imports: [
-    CoreModule,
     RouterModule.forRoot(appRoutes),
     InMemoryWebApiModule.forRoot(ItemData)
   ],

@@ -13,8 +13,8 @@ export class SearchButtonComponent {
 
   @Output() eventSearch = new EventEmitter<string>();
 
-  onSearch(form : NgForm){
-    this.eventSearch.emit(form.value.title);
+  onSearch(block_search : NgForm): void{
+    this.eventSearch.emit(block_search.value.title);
   }
 }
 

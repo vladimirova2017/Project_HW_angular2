@@ -72,7 +72,7 @@ export class MovieListComponent implements OnInit, OnDestroy {
     )
   }
 
-  like(item: PosterMovie, like: boolean) {
+  like(item: PosterMovie, like: boolean): void {
     if (like) {
       item['likes']++;
     } else {
@@ -81,7 +81,7 @@ export class MovieListComponent implements OnInit, OnDestroy {
     this.likeRender(item);
   }
 
-  getItemData(): any {
+  getItemData(): PosterMovie[] {
     return this.itemData;
   }
 

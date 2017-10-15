@@ -8,29 +8,29 @@
   clear: both;
 }
 
-.detail-content {
+.movie_detail-content {
   padding: 5px 0;
   font: 16px  Arial, Helvetica;
   line-height: 1.5;
 }
 
-.item_content {
+.movie_item_content {
   overflow: auto;
   width: 100%;
   border: 1px solid black;
 }
 
-.item_description {
+.movie_item_description {
   padding: 20px;
   position: relative;
 }
 
-.item_title {
+.movie_item_title {
   font-weight: bolder;
   padding-top: 5%;
 }
 
-.item_title-name {
+.movie_item_title-name {
   color: #00f;
   font: xx-large 'Arial Black', Arial, Helvetica;
   font-weight: bold;
@@ -38,13 +38,13 @@
   padding-bottom: 5%
 }
 
-.item_sidebar {
+.movie_item_sidebar {
   width: 30%;
   float: left;
   padding: 20px;
 }
 
-.item_poster {
+.movie_item_poster {
   width: 350px;
   margin-left: 25%;
 }
@@ -56,13 +56,13 @@ button {
   outline: none;
 }
 
-.item_close {
+.movie_item_close {
   position: absolute;
   right: 0;
   top: 0;
   width: 32px;
   height: 32px;
   outline: none;
-  background: url(app/assept/images/close.png) no-repeat;
+  background: url(app/assets/images/close.png) no-repeat;
 }
 

@@ -18,11 +18,11 @@ export class SortButtonsComponent {
   @Output() eventSortLikes = new EventEmitter<string>();
   @Output() eventSortStars = new EventEmitter<string>();
 
-  likes(){
+  likes(): void{
   this.eventSortLikes.emit('likes');
   }
 
-  rating(){
+  rating(): void{
     this.eventSortStars.emit('rating');
   }
 }

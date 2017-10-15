@@ -14,8 +14,8 @@ var SearchButtonComponent = (function () {
         this.newSearchTitle = '';
         this.eventSearch = new core_1.EventEmitter();
     }
-    SearchButtonComponent.prototype.onSearch = function (form) {
-        this.eventSearch.emit(form.value.title);
+    SearchButtonComponent.prototype.onSearch = function (block_search) {
+        this.eventSearch.emit(block_search.value.title);
     };
     return SearchButtonComponent;
 }());

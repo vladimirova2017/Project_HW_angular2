@@ -7,12 +7,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
-var footer_component_1 = require("./footer/footer.component");
-var header_component_1 = require("./header/header.component");
-var search_button_component_1 = require("./search-button/search-button.component");
-var sort_buttons_component_1 = require("./sort-buttons/sort-buttons.component");
+var index_1 = require("./footer/index");
+var index_2 = require("./header/index");
+var index_3 = require("./rating/index");
+var index_4 = require("./search-button/index");
+var index_5 = require("./sort-buttons/index");
 var forms_1 = require("@angular/forms");
-var rating_component_1 = require("./rating/rating.component");
 var SharedModule = (function () {
     function SharedModule() {
     }
@@ -20,23 +20,16 @@ var SharedModule = (function () {
 }());
 SharedModule = __decorate([
     core_1.NgModule({
-        declarations: [
-            footer_component_1.FooterComponent,
-            header_component_1.HeaderComponent,
-            rating_component_1.RatingComponent,
-            search_button_component_1.SearchButtonComponent,
-            sort_buttons_component_1.SortButtonsComponent
-        ],
         imports: [
             common_1.CommonModule,
             forms_1.FormsModule
         ],
         exports: [
-            footer_component_1.FooterComponent,
-            header_component_1.HeaderComponent,
-            rating_component_1.RatingComponent,
-            search_button_component_1.SearchButtonComponent,
-            sort_buttons_component_1.SortButtonsComponent
+            index_1.FooterModule,
+            index_2.HeaderModule,
+            index_3.RatingModule,
+            index_4.SearchButtonModule,
+            index_5.SortButtonsModule,
         ]
     })
 ], SharedModule);
