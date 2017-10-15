@@ -1,4 +1,46 @@
+*{
+  box-sizing: border-box;
+}
 .movie-edit_block{
   display: flex;
   flex-direction: column;
 }
+
+.me-header{
+  width: 30em;
+  overflow: auto;
+  padding: 0.5em;
+  table-layout: fixed;
+  border : 0.01em solid black;
+  color: #00f;
+}
+.me-field{
+  width: 30em;
+  overflow: auto;
+  padding: 0.5em;
+  table-layout: fixed;
+}
+.me-field-description{
+  width: 30em;
+  overflow: auto;
+  padding: 0.5em;
+  table-layout: fixed;
+  min-height: 7em;
+}
+.movie_item_close {
+  float: right;
+  width: 32px;
+  height: 32px;
+  outline: none;
+  border: 0;
+  background: url(app/assets/images/close.png) no-repeat;
+}
+.me-submit{
+  width: 15em;
+  padding: 0.5em;
+  table-layout: fixed;
+}
+label{
+  color: #00f;
+}
+
