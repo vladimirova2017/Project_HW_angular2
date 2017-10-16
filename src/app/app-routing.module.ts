@@ -1,10 +1,10 @@
-import {NgModule}from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {ItemData} from './inMemServer/inMemoryServer';
-import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
-import { MovieListRoutes } from "./features/movie-list/movie-list.routes";
-import { MovieItemRoutes } from "./features/movie-item/movie-item.routes";
-import {MovieEditRoutes} from "./features/movie-edit/movie-edit.routers";
+import { NgModule }from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { ItemData } from './inMemServer/inMemoryServer';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { MovieListRoutes } from './features/movie-list/movie-list.routes';
+import { MovieItemRoutes } from './features/movie-item/movie-item.routes';
+import { MovieEditRoutes } from './features/movie-edit/movie-edit.routers';
 
 export const appRoutes: Routes = [
   ...MovieListRoutes,

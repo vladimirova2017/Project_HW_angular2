@@ -1,4 +1,4 @@
-export class PosterMovie {
+export interface PosterMovie {
 
   id: number;
   title: string;
