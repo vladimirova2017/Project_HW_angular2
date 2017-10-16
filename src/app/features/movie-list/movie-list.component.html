@@ -2,7 +2,7 @@
   <div class='movie_list_base-content'>
     <sort-buttons (eventSortLikes)='sortItemMovie($event)' (eventSortStars)='sortItemMovie($event)'></sort-buttons>
     <search-button (eventSearch)='searchItemMovie($event)'></search-button>
-    <edit-button (click)='movieEdit()'>1111</edit-button>
+    <edit-button (click)='movieEdit()'></edit-button>
 
     <section class='movie_list' *ngFor='let item of itemData'>
       <div class='movie_list_sidebar'>
